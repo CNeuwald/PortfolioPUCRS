@@ -1,0 +1,106 @@
+.cta .button button,
+.cta .button svg {
+  pointer-events: none;
+}
+.cta .button svg {
+  filter: invert(0);
+}
+.cta svg {
+  margin-left: 9px;
+  transform: rotate(180deg);
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.cta .submenu {
+  z-index: -10;
+}
+.cta .submenu__inner {
+  background-color: var(--lightBlue);
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  padding-top: var(--headerHeight);
+  z-index: -1;
+}
+.cta .submenu__inner:before {
+  content: "";
+  top: var(--headerHeight);
+  left: 0;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background-color: rgba(var(--darkTextRgb), 0.2);
+}
+.cta .submenu .wrap > div {
+  display: flex;
+  width: auto;
+  margin: 0 -31px;
+  max-width: unset;
+}
+.cta .submenu .subitem {
+  padding: 50px 31px 80px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 322px;
+}
+.cta .submenu .subitem:first-child {
+  border-right: 1px solid rgba(var(--darkTextRgb), 0.2);
+  flex-basis: 298.5px;
+  flex-grow: 0;
+  padding-right: 55px;
+}
+.cta .submenu .subitem:first-child h2 {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.91px;
+}
+.cta .submenu .subitem:first-child p {
+  font-size: 11px;
+}
+.cta .submenu .subitem:first-child + .subitem {
+  padding-left: 55px;
+  flex-basis: 346px;
+}
+.cta .submenu .subitem h2 {
+  color: var(--white);
+  margin-bottom: 33px;
+  font-weight: 300;
+  font-size: 17px;
+  letter-spacing: -0.42px;
+}
+.cta .submenu .subitem p {
+  margin-bottom: 20px;
+  line-height: 21px;
+}
+.cta .submenu .subitem .button {
+  margin-top: auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.cta .submenu__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(var(--darkBlueRgb), 0.5);
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+@supports (
+  (-webkit-backdrop-filter: blur(30px)) or (backdrop-filter: blur(30px))
+) {
+  .cta .submenu__overlay {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+  }
+}
+.cta.active .has-submenu svg {
+  transform: none;
+}
+.cta:not(:last-child) {
+  margin-right: 35px;
+}

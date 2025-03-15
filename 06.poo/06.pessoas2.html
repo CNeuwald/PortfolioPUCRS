@@ -1,0 +1,10 @@
+function pessoa () = {
+    this.nome: "João",
+    this.idade: 30,
+    this.profissao: estudante,
+    this.calcularIdade: function () {
+        return new Date().getFullYear() - this.idade;
+    }
+}
+console.log(pessoa.calcularIdade());
+// saída: 1991

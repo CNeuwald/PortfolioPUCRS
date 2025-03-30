@@ -1,0 +1,48 @@
+<script>
+    // Constructor function Pessoa
+    function Pessoa(nome, anoDeNascimento, profissao) {
+        this.nome = nome;
+        this.anoDeNascimento = anoDeNascimento;
+        this.profissao = profissao;
+        this.calculaIdade = function() {
+            return new Date().getFullYear() - this.anoDeNascimento;
+        };
+    }
+
+    // Adding a method to Pessoa's prototype
+    Pessoa.prototype.saudar = function() {
+        console.log("Olá, meu nome é " + this.nome.join(" ") + "!");
+    };
+
+    // Creating an instance of Pessoa
+    const pessoa1 = new Pessoa(["Fulano", "de Tal"], 1990, "Estudante");
+    console.log(pessoa1); // Logs the pessoa1 object
+    console.log(pessoa1.calculaIdade()); // Logs the calculated age
+    pessoa1.saudar(); // Logs the greeting
+
+    // Creating an object using Object.create
+    const pessoaBase = {
+        nome: ["Fulano", "de Tal"],
+        anoDeNascimento: 1990,
+        profissao: "Estudante",
+        calculaIdade: function() {
+            return new Date().getFullYear() - this.anoDeNascimento;
+        }
+    };
+
+    const pessoa2 = Object.create(pessoaBase);
+    console.log(pessoa2); // Logs the pessoa2 object
+    console.log(Object.getPrototypeOf(pessoa2)); // Logs the prototype of pessoa2
+
+    // Creating an object using the Object constructor
+    const pessoa3 = new Object();
+    pessoa3.nome = ["Fulano", "de Tal"];
+    pessoa3.anoDeNascimento = 1990;
+    pessoa3.profissao = "Estudante";
+    pessoa3.calculaIdade = function() {
+        return new Date().getFullYear() - this.anoDeNascimento;
+    };
+    console.log(pessoa3); // Logs the pessoa3 object
+    console.log(pessoa3.constructor); // Logs the constructor of pessoa3
+</script>
+           

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Salário</title>
+</head>
+<body>
+    <h1>Calculadora de Salário</h1>
+    <div id="output"></div>
+
+    <script>
+        const empregado1 = {
+            nome: "Alessandro",
+            salarioFixo: 5000,
+            valorHoraExtra: 100,
+            qtHoraExtra: 20,
+            calcularSalario: function() {
+                return this.salarioFixo + (this.valorHoraExtra * this.qtHoraExtra);
+            },
+            saudar: function() {
+                return `Olá, meu nome é ${this.nome}!`;
+            }
+        };
+
+        const empregado2 = {
+            nome: "Maria",
+            salarioFixo: 6000,
+            valorHoraExtra: 150,
+            qtHoraExtra: 10,
+            calcularSalario: function() {
+                return this.salarioFixo + (this.valorHoraExtra * this.qtHoraExtra);
+            },
+            saudar: function() {
+                return `Olá, meu nome é ${this.nome}!`;
+            }
+        };
+
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML = `
+            <p>${empregado1.saudar()} Meu salário é: R$ ${empregado1.calcularSalario()}</p>
+            <p>${empregado2.saudar()} Meu salário é: R$ ${empregado2.calcularSalario()}</p>
+        `;
+    </script>
+</body>
+</html>

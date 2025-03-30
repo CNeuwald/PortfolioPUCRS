@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Pessoa</title>
+</head>
+<body><script>
+    function Pessoa(nome, anoDeNascimento, profissao) {
+        this.nome = nome;
+        this.anoDeNascimento = anoDeNascimento;
+        this.profissao = profissao;
+        this.calcularIdade = function () {
+            return new Date().getFullYear() - this.anoDeNascimento;
+        };
+    }
+
+    var pessoa1 = new Pessoa("João", 1990, "Estudante");
+    var pessoa2 = new Pessoa("Maria", 1995, "Professora");
+    var pessoa3 = new Pessoa("Carlos", 1985, "Engenheiro");
+
+    console.log(`${pessoa1.nome} é ${pessoa1.profissao} e tem ${pessoa1.calcularIdade()} anos.`); // Saída: João é Estudante e tem 35 anos.
+    console.log(`${pessoa2.nome} é ${pessoa2.profissao} e tem ${pessoa2.calcularIdade()} anos.`); // Saída: Maria é Professora e tem 30 anos.
+    console.log(`${pessoa3.nome} é ${pessoa3.profissao} e tem ${pessoa3.calcularIdade()} anos.`); // Saída: Carlos é Engenheiro e tem 40 anos.
+</script>
+</body>
+</html>

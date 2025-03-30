@@ -1,0 +1,23 @@
+<script>
+    // Função para criar um objeto pessoa com propriedades e métodos
+    function criarPessoa() {
+        return { 
+            nome: ['Fulano', 'de Tal'], // Nome e sobrenome
+            anoDeNascimento: 1990, // Ano de nascimento
+            profissao: 'Estudante', // Profissão
+            calculaIdade: function() {
+                // Calcula a idade com base no ano atual
+                return new Date().getFullYear() - this.anoDeNascimento;
+            }
+        };
+    }
+
+    // Criando uma instância de pessoa
+    const pessoa = criarPessoa();
+
+    // Exibindo as propriedades e métodos do objeto
+    console.log(pessoa.nome[0]); // Saída: Fulano
+    console.log(pessoa.nome[1]); // Saída: de Tal
+    console.log(pessoa.profissao); // Saída: Estudante
+    console.log(pessoa.calculaIdade()); // Saída: 35 (considerando o ano atual como 2025)
+</script>

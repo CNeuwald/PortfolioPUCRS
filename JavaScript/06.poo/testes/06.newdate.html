@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Pessoa</title>
+</head>
+<body>
+    <script>
+        var pessoa = {
+            nome: ['João', 'Da Silva'], 
+            anoDeNascimento: 1980, 
+            profissao: 'Professor', 
+            calcularIdade: function() {
+  
+                return new Date().getFullYear() - this.anoDeNascimento;
+            }
+        };
+    
+        console.log(pessoa.calcularIdade());
+    
+    </script>
+</body>
+</html>

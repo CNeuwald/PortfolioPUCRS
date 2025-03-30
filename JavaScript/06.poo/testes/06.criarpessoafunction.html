@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Salário</title>
+</head>
+<body>
+    <script>
+        function criaEmpregado(salarioBase, valorHoraExtra, qtHoraExtra) {
+            return {
+                salarioBase,
+                valorHoraExtra,
+                qtHoraExtra,
+                calcularSalario: function () {
+                    return this.salarioBase + (this.valorHoraExtra * this.qtHoraExtra);
+                }
+            };
+        }
+
+        const empregado1 = criaEmpregado(5000, 100, 20);
+        const empregado2 = criaEmpregado(6000, 150, 10);
+        const empregado3 = criaEmpregado(7000, 200, 5);
+
+        console.log(empregado1.calcularSalario()); // Example usage
+        console.log(empregado2.calcularSalario());
+        console.log(empregado3.calcularSalario());
+    </script>
+</body>
+</html>

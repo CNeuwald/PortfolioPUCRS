@@ -1,0 +1,21 @@
+<script>
+    
+    function criarPessoa() {
+        return {
+            nome: 'Lucas',
+            idade: 25,
+            anoDeNascimento: 1998,
+            profissao: 'Estudante',
+        };
+    }
+
+    
+    const pessoa1 = criarPessoa();
+    const pessoa2 = criarPessoa();
+
+   
+    pessoa2.anoDeNascimento = 1995;
+
+    console.log(pessoa1);
+    console.log(pessoa2); 
+</script>

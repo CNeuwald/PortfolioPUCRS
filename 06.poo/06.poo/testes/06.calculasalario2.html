@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Salário</title>
+</head>
+<body>
+    <script>
+        const empregado = {
+            salarioFixo: 5000,
+            valorHoraExtra: 100,
+            HoraExtra: 20,
+            calcularSalario: function() {
+                return this.salarioFixo + (this.valorHoraExtra * this.HoraExtra);
+            }
+        };
+        console.log(empregado.calcularSalario()); // Saída: 7000
+    </script>
+</body>
+</html>

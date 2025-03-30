@@ -1,0 +1,19 @@
+<script>
+     var pessoa = { 
+        nome: "Alessandro", 
+        idade: 48,
+        cumprimentar: function() {
+            return `Olá, meu nome é ${this.nome}!`;
+        },
+        calcularIdade: function(anoAtual = new Date().getFullYear()) {
+            return anoAtual - (new Date().getFullYear() - this.idade);
+        }
+    };
+    console.log(pessoa.nome); // Saída: Alessandro
+    console.log(pessoa.idade); // Saída: 48
+    console.log(pessoa.cumprimentar()); // Saída: Olá, meu nome é Alessandro!
+    console.log(pessoa.calcularIdade()); // Saída: 1975
+    console.log(pessoa.calcularIdade(2023)); // Saída: 48
+    console.log(pessoa.calcularIdade(2024)); // Saída: 49
+    console.log(pessoa.calcularIdade(2025)); // Saída: 50
+</script>

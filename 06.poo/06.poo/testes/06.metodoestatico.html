@@ -1,0 +1,26 @@
+<script>
+    class Pessoa {
+        constructor(nome, anoDeNascimento, profissao) {
+            this.nome = nome;
+            this.anoDeNascimento = anoDeNascimento;
+            this.profissao = profissao;
+        }
+
+        static ola() {
+            console.log("Olá");
+        }
+
+        calculaIdade() {
+            return new Date().getFullYear() - this.anoDeNascimento;
+        }
+    }
+
+    // Definindo um atributo estático
+    Pessoa.NOME_CLASSE = "Pessoa";
+
+    // Chamando o método estático
+    Pessoa.ola();
+
+    // Acessando o atributo estático
+    console.log(Pessoa.NOME_CLASSE); // Saída: Pessoa
+</script>

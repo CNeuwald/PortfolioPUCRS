@@ -1,0 +1,17 @@
+<title>Programa que calcula a idade!</title>
+<h1>Programa que calcula a idade!</h1>
+<form id="ageForm">
+  <label for="birthYear">Quando você nasceu?</label>
+  <input type="number" id="birthYear" name="birthYear" required>
+  <button type="submit">Calcular Idade</button>
+</form>
+<p id="result"></p>
+
+<script>
+document.getElementById('ageForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const birthYear = document.getElementById('birthYear').value;
+  const age = 2025 - birthYear;
+  document.getElementById('result').textContent = 'Sua idade em 2025 será: ' + age;
+});
+</script>

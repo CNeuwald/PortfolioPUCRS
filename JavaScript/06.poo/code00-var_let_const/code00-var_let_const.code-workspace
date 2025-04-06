@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../code01-arrays"
+		},
+		{
+			"path": "../code02-functions"
+		},
+		{
+			"path": "../code03-classes"
+		},
+		{
+			"path": "../code04-exception"
+		},
+		{
+			"path": "../code05-async"
+		},
+		{
+			"path": "../testes"
+		}
+	]
+}

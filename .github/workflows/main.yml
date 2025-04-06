@@ -1,0 +1,56 @@
+name: devops-basico-CI
+
+# Regras de gatilho para o pipeline
+on:
+  push:
+    branches: [main]
+    
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Diretório base dos arquivos. Não funciona para o docker build & push
+        working-directory: .\Rafael\PortfolioPUCRS\conversao-temperatura
+
+    steps:
+       - uses: actions/checkout@v4.2.2
+       
+        # Instala o node
+       - name: Setup nodejs
+         uses: actions/setup-node@v4.3.0
+         with:
+           node-version: 18.18.0
+
+        # Prepara para os testes
+       - name: Setup Mocha for tests and install dependencies
+         run: |
+           cd src
+           npm install -g mocha
+           npm install
+
+        # Executa os testes
+       - name: Run tests
+         run: mocha src/test/convert.js 
+
+        # Realiza login no docker hub
+       - name: Docker login
+         uses: docker/login-action@v3.4.0
+         with:
+           username: ${{secrets.DOCKER_CNeuwald}}
+           password: ${{secrets.DOCKER_PASSWORD}}
+
+        # Realiza build e publicação da imagem docker 
+        # Necessário o push para a publicação no docker hub
+        # Ignora o working directory setado anteriormente
+       - name: Build and push Docker image
+         uses: docker/build-push-action@v6.15.0
+         with: 
+           context: .\PortfolioPUCRS\conversao-temperatura/src
+           file: ./PortfolioPUCRS\conversao-temperatura/src
+           push: true
+           tags: |
+             \PortfolioPUCRS\conversao-temperatura:${{github.run_number}}
+             \PortfolioPUCRS\conversao-temperatura:latest
+       
